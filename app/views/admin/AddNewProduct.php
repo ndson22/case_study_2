@@ -13,8 +13,9 @@ require_once APPROOT . "/views/layout/admin/sidebar.php";
                     <div class="card-header">
                         <h5 class="card-header-text">Thêm sản phẩm mới</h5>
                     </div>
-                    <?php if (isset($data['success'])): ?>
-                        <div class="form-control-feedback text-success"><?php echo $data['success']; ?></div>
+                    <?php if (isset($_SESSION['success'])): ?>
+                        <div class="form-control-feedback text-success"><?php echo $_SESSION['success']; ?></div>
+                    <?php unset($_SESSION['success']); ?>
                     <?php  endif; ?>
                     <div class="card-block">
                         <form action="<?php echo URLROOT; ?>/Manager/addProducts" method="post"

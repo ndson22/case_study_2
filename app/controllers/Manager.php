@@ -109,8 +109,9 @@ class Manager extends Controller
                         "size" => $size,
                         "price" => $price
                     ];
-                    $data['success'] = "Thêm sản phẩm mới thành công";
+                    $_SESSION['success'] = "Thêm sản phẩm mới thành công";
                     $this->productModel->addProducts($product);
+                    header("location: " . URLROOT . "/Manager/addProducts");
                 } else {
                     $this->view("admin", "AddNewProduct", $data);
                 }
